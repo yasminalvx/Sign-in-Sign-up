@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+
+/*==================== VARIABLES CSS ====================*/
+
+:root {
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-regular: 400;
+    --font-light: 300;
+
+    /*========== Font size ==========*/
+    --big-font-size: 2.875rem;
+    --normal-font-size: 1.125rem;
+    --normal-font-size-2: 1rem;
+    --small-font-size: .875rem;
+
+    /*========== Margenes ==========*/
+    
+    --header-top: 45px;
+    --header-bottom: 30px;
+    --box-bottom: 16px;
+    --button-top: 15px;
+    --checkbox-top: 20px;
+    --checkbox-left: 55px;
+    --checkbox-right: 55px;
+    --login-left: 17px;
+    --login-top: 0px;
+    
+    /*========== Width & header ==========*/
+    --width-container: 498px;
+    --width-main: 386px;
+    --width-half-box: 188px;
+    --width-logo: 138px;
+    
+    --height-container: 542px;
+    --height-main: 264px;
+    --height-box: 50px;
+
+
+}
+
+@media screen and (max-width: 760px) {
+    :root {
+        /*========== Width & header ==========*/
+        --width-container: 301px;
+        --width-main: 233px;
+        --width-half-box: 114px;
+
+        --height-container: 364px;
+        --height-main: 176px;
+        --height-box: 33px;
+
+        /*========== Font size ==========*/
+        --big-font-size: 2.25rem;
+        --normal-font-size: 0.875rem;
+        --normal-font-size-2: 0.875rem;
+        --small-font-size: .75rem;
+
+        /*========== Margenes ==========*/
+    
+        --header-top: 30px;
+        --header-bottom: 20px;
+        --box-bottom: 10px;
+        --button-top: 5px;
+        --checkbox-top: -2px;
+        --checkbox-left: 35px;
+        --checkbox-right: 35px;
+        --login-left: 10px;
+        --login-top: -15px;
+    }
+}
+
+
+
+
+/*==================== BASE ====================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(306.73deg, #0078D4 12.22%, rgba(10, 39, 103, 0.99) 50.22%, #0167B5 88.65%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+/*==================== LAYOUT ====================*/
+
+.container {
+    width: var(--width-container);
+    height: var(--height-container);
+    background: #F7F7F7;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*==================== HEADER ====================*/
+
+.header {
+    text-align: center;
+    padding-top: var(--header-top);
+    margin-bottom: var(--header-bottom);
+}
+
+.header h1 {
+    font-size: var(--big-font-size);
+    font-weight: var(--font-medium);
+}
+
+.header h3 {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-regular);
+}
+
+.header h3 a {
+    text-decoration-line: underline;
+    color: #4896FF;
+}
+
+/*==================== MAIN ====================*/
+
+.main {
+    width: var(--width-main);
+    height: var(--height-main);
+    justify-content: center;
+    display: flex;
+}
+
+.main ul li {
+    justify-content: center;
+    
+}
+
+/*==================== INPUT LAYOUT ====================*/
+
+.main ul li input {
+    width: var(--width-main);
+    height: var(--height-box);
+    margin-bottom: var(--box-bottom);
+    background: #F3F3F3;
+    box-shadow: 0px 0px 4px rgba(63, 62, 62, 0.2);
+    border: none;
+    border-radius: 6px;
+
+}
+
+.main ul li input:hover, .main ul li input:focus {
+    outline: none;
+    background: #FDFAFA;
+    box-shadow: 0px 0px 4px rgba(63, 62, 62, 0.32);
+    border-radius: 6px;
+}
+
+.main ul .short-rect {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main ul .short-rect li input {
+    width: var(--width-half-box);
+}
+
+.main ul li input::placeholder{
+    font-size: var(--normal-font-size-2);
+    font-weight: var(--font-regular);
+    color: #CACACA;
+}
+
+.main ul li input {
+    padding-left: 19px;
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-regular);
+    color: #121212;
+}
+
+/*==================== BUTTON CRIAR CONTA ====================*/
+
+
+.button-submit {
+    width: var(--width-main);
+    height: var(--height-box);
+    line-height: var(--height-box);
+    margin-top: var(--button-top);
+    border: none;
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    background: #4896FF url(../img/arrow-right.svg) no-repeat right center;
+    color: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(63, 62, 62, 0.35);
+    border-radius: 6px;
+} 
+
+.button-submit:active {
+    background: #6da8f5;
+}
+
+.icon-arrow {
+    color: #FFFFFF;
+}
+
+/*==================== CHECKBOX ====================*/
+
+.container-button {
+    cursor: pointer;
+    margin-top: var(--checkbox-top);
+    margin-left: var(--checkbox-left);
+    margin-right: var(--checkbox-right);
+}
+
+.button-check {
+    margin-left: 10px;
+    font-size: var(--small-font-size);
+    font-weight: var(--font-light);
+}
+
+.text-blue {
+    color: #4896FF;
+}
+
+/*==================== OTHERS LOGIN ====================*/
+
+.login-others {
+    margin-top: var(--login-top);
+    width: var(--width-main);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.login-others h4 {
+    padding-left: var(--login-left);
+    align-self: center;
+    font-size: var(--normal-font-size-2);
+    font-weight: var(--font-regular);
+}
+.login-others-logo {
+    width: var(--width-logo);
+    display: flex;
+    justify-content: space-between;
+}
