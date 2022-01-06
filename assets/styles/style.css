@@ -20,40 +20,28 @@
     --small-font-size: .875rem;
 
     /*========== Margenes ==========*/
-    
     --header-top: 45px;
     --header-bottom: 30px;
     --box-bottom: 16px;
     --button-top: 15px;
-    --checkbox-top: 20px;
-    --checkbox-left: 55px;
-    --checkbox-right: 55px;
-    --login-left: 17px;
-    --login-top: 0px;
+    --checkbox-top: 15px;
+    --login-top: 20px;
     
     /*========== Width & header ==========*/
-    --width-container: 498px;
-    --width-main: 386px;
-    --width-half-box: 188px;
-    --width-logo: 138px;
+    --width-container: 65.53%;
+    --width-main: 100%;
+    --width-half-box: 49%;
+    --width-logo: 120px;
     
-    --height-container: 542px;
+    --height-container: 100%;
     --height-main: 264px;
     --height-box: 50px;
-
 
 }
 
 @media screen and (max-width: 760px) {
     :root {
-        /*========== Width & header ==========*/
-        --width-container: 301px;
-        --width-main: 233px;
-        --width-half-box: 114px;
 
-        --height-container: 364px;
-        --height-main: 176px;
-        --height-box: 33px;
 
         /*========== Font size ==========*/
         --big-font-size: 2.25rem;
@@ -62,21 +50,18 @@
         --small-font-size: .75rem;
 
         /*========== Margenes ==========*/
-    
         --header-top: 30px;
         --header-bottom: 20px;
         --box-bottom: 10px;
         --button-top: 5px;
-        --checkbox-top: -2px;
-        --checkbox-left: 35px;
-        --checkbox-right: 35px;
-        --login-left: 10px;
-        --login-top: -15px;
+        --login-top: 10px;
+        --checkbox-top: 10px;
+
+         /*========== Width & header ==========*/
+        --height-main: 264px;
+        --height-box: 40px;
     }
 }
-
-
-
 
 /*==================== BASE ====================*/
 
@@ -99,16 +84,16 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
 }
 
 /*==================== LAYOUT ====================*/
 
 .container {
     width: var(--width-container);
+    max-width: 498px;
+    min-width: 301px;
     height: var(--height-container);
-    background: #F7F7F7;
+    background: #F3F3F3;
     border-radius: 16px;
     display: flex;
     flex-direction: column;
@@ -142,52 +127,71 @@ body {
 
 .main {
     width: var(--width-main);
-    height: var(--height-main);
     justify-content: center;
     display: flex;
 }
 
-.main ul li {
-    justify-content: center;
-    
+/*==================== INPUT LAYOUT - FLEXBOX ====================*/
+
+.form {
+    width: 80%;
 }
 
-/*==================== INPUT LAYOUT ====================*/
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
 
-.main ul li input {
-    width: var(--width-main);
+.inputs li {
+    width: 100%;
+}
+
+/*==================== INPUT LAYOUT SHORT-RECT ====================*/
+
+.short-rect {
+    width: 100%;
+}
+
+@media screen and (min-width: 760px) {
+    .short-rect {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .short-rect li {
+        width: var(--width-half-box);
+    }
+}
+
+/*==================== INPUT LAYOUT - DESIGN ====================*/
+
+.inputs li input {
+    width: 100%;
     height: var(--height-box);
     margin-bottom: var(--box-bottom);
     background: #F3F3F3;
     box-shadow: 0px 0px 4px rgba(63, 62, 62, 0.2);
     border: none;
     border-radius: 6px;
-
 }
 
-.main ul li input:hover, .main ul li input:focus {
+.inputs li input:hover, .main ul li input:focus {
     outline: none;
     background: #FDFAFA;
-    box-shadow: 0px 0px 4px rgba(63, 62, 62, 0.32);
     border-radius: 6px;
 }
 
-.main ul .short-rect {
-    display: flex;
-    justify-content: space-between;
-}
-
-.main ul .short-rect li input {
-    width: var(--width-half-box);
-}
-
-.main ul li input::placeholder{
+.inputs li input::placeholder{
     font-size: var(--normal-font-size-2);
     font-weight: var(--font-regular);
-    color: #CACACA;
+    color: #999898;
 }
 
-.main ul li input {
+.inputs li input {
     padding-left: 19px;
     font-size: var(--normal-font-size);
     font-weight: var(--font-regular);
@@ -196,22 +200,17 @@ body {
 
 /*==================== BUTTON CRIAR CONTA ====================*/
 
-
-.button-submit {
-    width: var(--width-main);
-    height: var(--height-box);
-    line-height: var(--height-box);
+.inputs .button-submit, .inputs .button-submit:hover {
     margin-top: var(--button-top);
-    border: none;
     font-size: var(--normal-font-size);
     font-weight: var(--font-medium);
     background: #4896FF url(../img/arrow-right.svg) no-repeat right center;
     color: #FFFFFF;
-    box-shadow: 0px 0px 4px rgba(63, 62, 62, 0.35);
-    border-radius: 6px;
-} 
+    cursor: pointer;
+    border: none;
+}   
 
-.button-submit:active {
+.inputs .button-submit:active {
     background: #6da8f5;
 }
 
@@ -222,14 +221,14 @@ body {
 /*==================== CHECKBOX ====================*/
 
 .container-button {
+    width: 80%;
     cursor: pointer;
     margin-top: var(--checkbox-top);
-    margin-left: var(--checkbox-left);
-    margin-right: var(--checkbox-right);
+    margin-bottom: 30px;
 }
 
 .button-check {
-    margin-left: 10px;
+    margin-left: 6px;
     font-size: var(--small-font-size);
     font-weight: var(--font-light);
 }
@@ -241,19 +240,21 @@ body {
 /*==================== OTHERS LOGIN ====================*/
 
 .login-others {
-    margin-top: var(--login-top);
-    width: var(--width-main);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    margin-top: var(--login-top);
+    margin-bottom: 30px;
+    width: 80%;
 }
 
 .login-others h4 {
-    padding-left: var(--login-left);
     align-self: center;
+    margin-bottom: 15px;
     font-size: var(--normal-font-size-2);
     font-weight: var(--font-regular);
 }
+
 .login-others-logo {
     width: var(--width-logo);
     display: flex;
