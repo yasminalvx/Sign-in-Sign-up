@@ -33,7 +33,6 @@
     --width-half-box: 49%;
     --width-logo: 120px;
     
-    --height-container: 100%;
     --height-main: 264px;
     --height-box: 50px;
 
@@ -92,7 +91,6 @@ body {
     width: var(--width-container);
     max-width: 498px;
     min-width: 301px;
-    height: var(--height-container);
     background: #F3F3F3;
     border-radius: 16px;
     display: flex;
